@@ -1,1 +1,1 @@
-gcc -o build/ItuxSiteGen main.c
+gcc -o build/ItuxSiteGen imps.c main.c
