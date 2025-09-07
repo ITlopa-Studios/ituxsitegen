@@ -23,7 +23,7 @@
 static struct termios orig_termios;
 
 // Restore original terminal settings on exit
-#define restore_termios() tcsetattr(STDIN_FILENO, TCSANOW, &orig_termios);
+void restore_termios() {tcsetattr(STDIN_FILENO, TCSANOW, &orig_termios);}
 
 static void handle_sigint(int sig) {
     (void)sig;
@@ -74,3 +74,4 @@ void __pause()
     system("pause");
 }
 #endif
+
