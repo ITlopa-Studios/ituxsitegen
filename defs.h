@@ -34,11 +34,8 @@
 
 
 
-#ifdef __unix__
-#define PAUSE() printf("Press Enter to continue..."); getchar()
-#else
-#define PAUSE() system("pause")
-#endif
+void __pause();
+#define PAUSE() __pause()
 
 #endif // header guard
 
