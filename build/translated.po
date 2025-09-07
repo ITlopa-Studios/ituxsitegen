@@ -1,0 +1,2 @@
+msgid "Press any key to continue..."
+msgstr "Нажмите любую клавишу чтобы продолжить..."

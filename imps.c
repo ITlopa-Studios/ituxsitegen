@@ -14,11 +14,17 @@
  * GNU Lesser General Public License for more details.
 */
 #ifdef __unix
+#include <libintl.h>
+#include <locale.h>
 #include <stdio.h>
 #include <unistd.h>
 #include <termios.h>
 #include <signal.h>
 #include <stdlib.h>
+
+#ifndef _
+#define _(string) gettext(string)
+#endif
 
 static struct termios orig_termios;
 
@@ -69,9 +75,13 @@ void __pause() {
 }
 #else
 #include <stdlib.h>
+
+#ifndef _
+#define _(string) (string)
+#endif
+
 void __pause()
 {
     system("pause");
 }
 #endif
-
