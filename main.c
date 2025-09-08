@@ -17,9 +17,15 @@
 #include <stdlib.h>
 #include <string.h>
 #include "defs.h"
+#include <locale.h>
 
 int main(int argc, char **argv)
 {
+    if (setlocale(LC_ALL, "") == NULL) {
+        fprintf(stderr, "Failed to set locale\n");
+        PAUSE();
+        return -1;
+    }
     int argcounter = argc - 1;
     char* file_name = argv[0];
     if (argcounter < 1) {
